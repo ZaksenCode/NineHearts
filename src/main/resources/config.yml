@@ -1,0 +1,111 @@
+
+# Command permissions:
+# hearts.command.set, hearts.command.add, hearts.command.remove,
+# hearts.command.buy, hearts.command.status, hearts.command.reload
+
+# Default player hearts number
+default_hearts: 9
+
+# Max buy limit of hearts
+hearts_buy_limit: 15
+
+# Player HealthPoints -> 20.0 = 10
+health: 2.0
+
+# One heart price
+heart_price: 150
+
+# Heart lost debt settings
+heart_lost_debt:
+  count: -75
+  do_toast: false
+  toast: "<red>Ваш долг превысил лимит, вы потеряли жизнь, теперь у вас {hearts} жизней</red>"
+
+# Totem use cost (in points)
+totem_use_cost: 20
+
+# Rewards for advancements
+advancement_reward:
+  task: 5
+  goal: 5
+  challenge: 15
+
+  do_toast: false
+  toast: "<green>Вы получили {points} очков за выполнение достижения, теперь у вас {new_points} очков!</green>"
+
+spectator_message: "<red> Увы ваши жизни закончились, теперь вы можете только наблюдать </red>"
+
+# Notification of deceased players when somebody die
+death_msg:
+  # Accepts parameters [BOTH, CHAT, TITLE, OFF]
+  type: "CHAT"
+  chat: "<red>Вы умерли, у вас осталось {hearts} жизней</red>"
+  title: "<red>Осталось {hearts} жизней</red>"
+  sub_title: "<red>Осталось {hearts} жизней</red>"
+
+  # ОNotification of other players when somebody die
+  broadcast:
+    # Accepts parameters [BOTH, CHAT, TITLE, OFF]
+    type: "TITLE"
+    chat: "<red>Игрок {player} потерял жизнь</red>"
+    title: "<red>{player}</red>"
+    sub_title: "<red>Потерял жизнь</red>"
+
+# First login message settings
+first_join:
+  - "<green>Добро пожаловать на 9 Lives Hardcore</green>"
+  - "<gray>В Данном режиме у вас 1 хп и 9 жизней</gray>"
+  - "<gray>С каждой смертью вы теряете жизнь</gray>"
+  - "<gray>Когда жизни закончатся вы сможете только наблюдать за игрой</gray>"
+  - "<gray>Жизни так же можно восполнять за очки с помощью /hearts buy</gray>"
+  - "<gray>Очки можно получить за выполнение достижений</gray>"
+  - "<gray>Если использовать тотем бессмертия вы потеряете часть очков</gray>"
+
+join:
+  title: "<green> Добро пожаловать! </green>"
+  sub_title: "<green>У вас {hearts} жизней и {points} очков</green>"
+
+# Settings for the hearts command
+hearts_command:
+  fail_no_player: "<red>Указанный игрок не был найден!</red>"
+  fail_no_permission: "<red>У вас недостаточно прав для использования данной команды!</red>"
+  fail_no_args: "<red>Укажите аргументы команды: set, remove, add</red>"
+  fail_no_value: "<red>Для успешного выполнения команды необходимо так же указать количество сердец</red>"
+  fail_sender_not_player: "<red>Данная команда может быть вызвана только от лица игрока</red>"
+  success: "<green>Игроку {player} было установлено {hearts} сердец</green>"
+  success_status: "<green>У вас {hearts} сердец и {points} очков</green>"
+  success_reload: "<green>Перезагрузка выполнена!</green>"
+
+# Settings for the hearts_points command
+hearts_points_cmd:
+  fail_no_player: "<red>Указанный игрок не был найден!</red>"
+  fail_no_permission: "<red>У вас недостаточно прав для использования данной команды!</red>"
+  fail_no_args: "<red>Укажите аргументы команды: set, remove, add</red>"
+  fail_no_value: "<red>Для успешного выполнения команды необходимо так же указать количество сердец</red>"
+  success: "<green>Игроку {player} было установлено {points} очков</green>"
+
+# Purchase settings
+buy:
+  success: "<green>Вы успешно приобрели жизнь!</green>"
+  fail: "<red>Для покупки жизни необходимо {price} очков!</red>"
+  fail_limit: "<red>У вас максимальное количество жизней!</red>"
+
+# Purchase menu settings
+buy_menu:
+  title: "Магазин жизней"
+
+  background:
+    material: "LIME_STAINED_GLASS_PANE"
+    name: ""
+
+  buy_item:
+    material: "GREEN_STAINED_GLASS"
+    name: "Приобрести жизнь"
+    lore:
+      - "<green>Цена: {price}</green>"
+      - "<gray>В данный момент у вас {hearts} жизней и {points} очков</gray>"
+      - "<gray>Нажмите ЛКМ для покупки</gray>"
+    slot: 13
+
+# Database settings
+table_name: "players_data"

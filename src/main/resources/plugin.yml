@@ -1,0 +1,13 @@
+name: NineHearts
+version: '${version}'
+main: me.zaksen.nineHearts.NineHearts
+api-version: '1.21'
+authors: [ Zaksen_ ]
+
+commands:
+  hearts:
+    usage: /hearts
+  hearts_points:
+    usage: /hearts_points
+  buylife:
+    usage: /buylife
